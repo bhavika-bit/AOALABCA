@@ -1,278 +1,82 @@
-/* Game-Themed Merge Sort Visualizer */
 body {
-  font-family: 'Press Start 2P', cursive, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  margin: 0;
-  padding: 20px;
-  background-color: #1a1a2e;
-  color: #e6e6e6;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.1) 0%, transparent 20%),
-    radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 20%);
-  overflow-x: hidden;
+  margin: 50px;
+  background-color: #f0f8ff;
+  color: #333;
 }
 
 h1 {
-  color: #00ffaa;
-  text-shadow: 0 0 10px rgba(0, 255, 170, 0.5);
-  margin-bottom: 30px;
-  font-size: 2.5rem;
-  animation: glow 2s infinite alternate;
+  color: #007bff;
 }
 
-@keyframes glow {
-  from { text-shadow: 0 0 5px #00ffaa; }
-  to { text-shadow: 0 0 15px #00ffaa, 0 0 20px #00ffaa; }
-}
-
-.game-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(26, 26, 46, 0.8);
-  border-radius: 15px;
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
-  border: 2px solid #00ffaa;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+input, button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  font-size: 16px;
 }
 
 input {
-  padding: 12px 20px;
-  width: 200px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border: 2px solid #ff00aa;
-  border-radius: 8px;
-  color: white;
-  font-size: 16px;
-  text-align: center;
-  transition: all 0.3s;
-}
-
-input:focus {
-  outline: none;
-  border-color: #00ffaa;
-  box-shadow: 0 0 15px rgba(0, 255, 170, 0.5);
+  width: 300px;
 }
 
 button {
-  padding: 12px 25px;
-  background: linear-gradient(145deg, #ff00aa, #ff0066);
+  background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 5px 15px rgba(255, 0, 170, 0.4);
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 0, 170, 0.6);
-  background: linear-gradient(145deg, #ff0066, #ff00aa);
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
-button:disabled {
-  background: #555;
-  transform: none;
-  box-shadow: none;
-  cursor: not-allowed;
-}
-
-#array-container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: 300px;
-  margin: 30px 0;
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-}
-
-.array-bar {
-  width: 30px;
-  margin: 0 2px;
-  background: linear-gradient(to top, #00ffaa, #00ccff);
-  border-radius: 5px 5px 0 0;
-  transition: height 0.3s, background 0.3s;
-  position: relative;
-  box-shadow: 0 -5px 10px rgba(0, 255, 255, 0.3);
-}
-
-.array-bar.comparing {
-  background: linear-gradient(to top, #ff00aa, #ff6600);
-  animation: pulse 0.5s infinite alternate;
-}
-
-.array-bar.sorted {
-  background: linear-gradient(to top, #00ff00, #00aa00);
-  box-shadow: 0 -5px 10px rgba(0, 255, 0, 0.3);
-}
-
-.array-bar.pivot {
-  background: linear-gradient(to top, #ffff00, #ffcc00);
-  animation: bounce 0.5s infinite alternate;
-}
-
-@keyframes pulse {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); }
-}
-
-@keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
+  background-color: #0056b3;
 }
 
 #output {
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: white;
   border-radius: 10px;
-  border-left: 5px solid #00ffaa;
-  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .step {
-  margin-bottom: 15px;
-  padding: 15px;
-  background-color: rgba(0, 255, 170, 0.1);
-  border-radius: 8px;
-  animation: slideIn 0.5s ease-out;
-  position: relative;
-  overflow: hidden;
-}
-
-.step::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(to bottom, #00ffaa, #00ccff);
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 4px solid #007bff;
+  background-color: #e9f5ff;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease;
 }
 
 .result {
-  color: #00ffaa;
+  color: #28a745;
   font-weight: bold;
-  font-size: 1.2rem;
-  text-shadow: 0 0 5px rgba(0, 255, 170, 0.5);
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 10px;
+  margin-top: 20px;
+  transition: width 0.3s ease;
 }
 
 #progress-container {
   width: 100%;
-  height: 20px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #e9f5ff;
   border-radius: 10px;
   overflow: hidden;
-  margin: 20px 0;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(to right, #ff00aa, #00ffaa);
-  border-radius: 10px;
-  transition: width 0.5s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  animation: shine 2s infinite;
-}
-
-@keyframes shine {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* Game stats */
-.stats {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-}
-
-.stat {
-  text-align: center;
-}
-
-.stat-value {
-  font-size: 1.5rem;
-  color: #00ffaa;
-  margin: 5px 0;
-}
-
-.stat-label {
-  font-size: 0.8rem;
-  color: #aaa;
-}
-
-/* Particles for game effect */
-.particle {
-  position: absolute;
-  background-color: #00ffaa;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-  .controls {
-    flex-direction: column;
-    align-items: center;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  input {
-    width: 80%;
-  }
-  
-  .array-bar {
-    width: 20px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
