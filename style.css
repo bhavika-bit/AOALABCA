@@ -2,82 +2,81 @@ body {
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   margin: 50px;
-  background: linear-gradient(135deg, #74b9ff, #a29bfe);
+  background-color: #f0f8ff;
   color: #333;
 }
 
 h1 {
-  color: #ffffff;
-  font-size: 3rem;
+  color: #007bff;
 }
 
 input, button {
   padding: 12px 20px;
   margin: 10px;
-  border: none;
-  border-radius: 25px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
   font-size: 16px;
 }
 
 input {
   width: 300px;
-  background-color: #dfe6e9;
-  color: #2d3436;
-  border: 2px solid #ffffff;
 }
 
 button {
-  background-color: #6c5ce7;
+  background-color: #007bff;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #4834d4;
+  background-color: #0056b3;
 }
 
 #output {
   margin-top: 20px;
   padding: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .step {
   margin-bottom: 10px;
   padding: 10px;
-  border-left: 6px solid #6c5ce7;
-  background-color: rgba(174, 203, 250, 0.4);
-  border-radius: 10px;
+  border-left: 4px solid #007bff;
+  background-color: #e9f5ff;
+  border-radius: 5px;
+  animation: fadeIn 0.5s ease;
 }
 
 .result {
-  color: #00b894;
+  color: #28a745;
   font-weight: bold;
 }
 
-button:active {
-  transform: scale(0.98);
-}
-
-input:focus {
-  outline: none;
-  border-color: #00cec9;
-}
-
-h2 {
-  color: #ffffff;
-}
-
-#nextStepButton {
-  background-color: #00cec9;
-  color: white;
-  display: none;
+.progress-bar {
+  height: 20px;
+  background-color: #007bff;
+  border-radius: 10px;
   margin-top: 20px;
+  transition: width 0.3s ease;
 }
 
-#nextStepButton:hover {
-  background-color: #00b894;
+#progress-container {
+  width: 100%;
+  background-color: #e9f5ff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
