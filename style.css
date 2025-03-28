@@ -2,65 +2,82 @@ body {
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
   margin: 50px;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  background: linear-gradient(135deg, #74b9ff, #a29bfe);
   color: #333;
 }
 
-button {
-  background-color: #ff6b81;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: #ff4757;
-  transform: scale(1.05);
-}
-
-#output {
-  margin-top: 20px;
-  padding: 20px;
-  background: linear-gradient(135deg, #70e1f5, #ffd194);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.step {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-left: 4px solid #ff6b81;
-  background-color: #fff0f5;
-  border-radius: 5px;
-}
-
-.result {
-  color: #2ed573;
-  font-weight: bold;
-}
-
 h1 {
-  color: #ff4757;
+  color: #ffffff;
+  font-size: 3rem;
 }
 
 input, button {
   padding: 12px 20px;
   margin: 10px;
-  border: 2px solid #ff6b81;
-  border-radius: 5px;
+  border: none;
+  border-radius: 25px;
   font-size: 16px;
 }
 
 input {
   width: 300px;
-  background-color: #fff5f5;
-  border-color: #ff6b81;
+  background-color: #dfe6e9;
+  color: #2d3436;
+  border: 2px solid #ffffff;
+}
+
+button {
+  background-color: #6c5ce7;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4834d4;
+}
+
+#output {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.step {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-left: 6px solid #6c5ce7;
+  background-color: rgba(174, 203, 250, 0.4);
+  border-radius: 10px;
+}
+
+.result {
+  color: #00b894;
+  font-weight: bold;
+}
+
+button:active {
+  transform: scale(0.98);
 }
 
 input:focus {
   outline: none;
-  border-color: #ff4757;
-  box-shadow: 0 0 8px rgba(255, 107, 129, 0.5);
+  border-color: #00cec9;
 }
-  
- 
+
+h2 {
+  color: #ffffff;
+}
+
+#nextStepButton {
+  background-color: #00cec9;
+  color: white;
+  display: none;
+  margin-top: 20px;
+}
+
+#nextStepButton:hover {
+  background-color: #00b894;
+}
