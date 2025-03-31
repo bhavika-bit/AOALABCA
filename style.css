@@ -1,0 +1,170 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Gidole&family=Open+Sans:wght@400;600&family=Roboto+Slab:wght@400;700&display=swap');
+
+/* Base Styles */
+body {
+  background: url('https://source.unsplash.com/1600x900/?fantasy,water') no-repeat center center/cover;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  color: #e6f7ff;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.6;
+}
+
+/* Game Container */
+.game-container {
+  background: rgba(0, 20, 40, 0.85);
+  padding: 30px;
+  margin: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px #0066cc;
+  border: 1px solid #3399ff;
+}
+
+/* Title */
+.game-title {
+  font-family: 'Gidole', sans-serif;
+  font-size: 2.8em;
+  text-shadow: 0 0 10px #66b3ff, 2px 2px 4px #003366;
+  margin-bottom: 20px;
+  color: #b3e0ff;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+/* Buttons */
+button {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.2em;
+  padding: 12px 24px;
+  margin: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #0066cc, #0099ff);
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #66b3ff;
+  background: linear-gradient(135deg, #0077e6, #00aaff);
+}
+
+/* Game Area */
+.game-area {
+  display: none;
+  margin-top: 20px;
+}
+
+/* Wizard Text */
+.wizard-text {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  color: #cce6ff;
+  letter-spacing: 0.3px;
+}
+
+/* Input Field */
+input {
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px;
+  font-size: 1.1em;
+  border-radius: 8px;
+  border: 2px solid #3399ff;
+  margin: 15px 0;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  background: rgba(230, 247, 255, 0.9);
+  color: #003366;
+}
+
+/* Sorting Steps */
+.sorting-steps {
+  background: rgba(0, 30, 60, 0.7);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #66b3ff;
+  min-height: 150px;
+  max-height: 400px;
+  overflow-y: auto;
+  text-align: left;
+  border: 1px solid #3399ff;
+}
+
+/* Wizard Messages */
+.wizard-message {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.15em;
+  margin: 10px 0;
+  background: rgba(102, 179, 255, 0.15);
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #3399ff;
+  animation: fadeIn 0.5s ease-in;
+  color: #e6f7ff;
+  line-height: 1.5;
+}
+
+.wizard-message-final {
+  font-family: 'Gidole', sans-serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #99ccff;
+  margin: 15px 0;
+  padding: 15px;
+  background: rgba(0, 40, 80, 0.6);
+  border-radius: 10px;
+  animation: fadeIn 0.7s ease-in;
+  border: 1px solid #66b3ff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .game-container {
+      width: 95%;
+      padding: 15px;
+  }
+  
+  .game-title {
+      font-size: 2em;
+  }
+  
+  button {
+      font-size: 1em;
+      padding: 10px 15px;
+  }
+  
+  input {
+      width: 90%;
+      font-size: 1em;
+  }
+  
+  .wizard-text {
+      font-size: 1.2em;
+  }
+  
+  .wizard-message {
+      font-size: 1em;
+  }
+}
